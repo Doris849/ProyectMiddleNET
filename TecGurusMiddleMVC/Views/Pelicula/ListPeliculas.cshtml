@@ -1,0 +1,23 @@
+﻿@*Estoy especificando con que modelo trabaja esta vista *@
+@*Crear un Modelo de Modelos *@
+@model List<TecGurusMiddleMVC.Models.PeliculaModels>
+@{
+    ViewBag.Title = "ListPeliculas";
+}
+
+<h1>Lista de Peliculas</h1>
+<hr />
+<br />
+@* Razor  *@
+@* es un tipo de codigo "hibrido" el cual permite acceder a los datos y escribir sentencias de c# dentro de HTML  *@
+@foreach (var item in Model)
+{
+    <h3>@item.Id </h3>
+    <h3>@item.Titulo </h3>
+    <h3>@item.Duracion </h3>
+    <h3>@item.Genero </h3>
+    <h3>@item.Director.Nombre </h3>
+
+    <hr />
+}
+
