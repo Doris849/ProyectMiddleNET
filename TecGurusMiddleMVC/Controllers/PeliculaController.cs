@@ -82,13 +82,16 @@ namespace TecGurusMiddleMVC.Controllers
             List<PeliculaModels> peliculasList = new List<PeliculaModels>();
             DirectorModels director = new DirectorModels();
             director.Nombre = "Aldo Director de pelicula";
-            peliculasList.Add(new PeliculaModels { Id = 1, Titulo = "P1", Duracion = 160, Genero = "accion", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 1, Titulo = "P2", Duracion = 161, Genero = "accion", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 1, Titulo = "P3", Duracion = 162, Genero = "Terror", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 1, Titulo = "P4", Duracion = 163, Genero = "Terror", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 1, Titulo = "P5", Duracion = 164, Genero = "Suspenso", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 1, Titulo = "P6", Duracion = 165, Genero = "Suspenso", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 1, Titulo = "P7", Duracion = 166, Genero = "drama", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 1, Titulo = "P1Accion", Duracion = 100, Genero = "accion", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 2, Titulo = "P2Accion", Duracion = 200, Genero = "accion", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 3, Titulo = "P3Terror", Duracion = 151, Genero = "Terror", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 4, Titulo = "P4Terror", Duracion = 85, Genero = "Terror", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 5, Titulo = "P5Suspenso", Duracion = 500, Genero = "Suspenso", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 6, Titulo = "P6Suspenso", Duracion = 105, Genero = "Suspenso", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 7, Titulo = "P7Drama", Duracion = 99, Genero = "Drama", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 8, Titulo = "P8Drama", Duracion = 60, Genero = "Drama", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 9, Titulo = "P9Drama", Duracion = 199, Genero = "Drama", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 10, Titulo = "P10Ficcion", Duracion = 164, Genero = "Ficcion", Director = director });
             return peliculasList;
         }
 
@@ -120,7 +123,7 @@ namespace TecGurusMiddleMVC.Controllers
             return Json(peliculas, JsonRequestBehavior.AllowGet);
         }
 
-        //Accion que muestra en una visya la lista de peliculas
+        // Accion que muestra en una vista la lista de peliculas
         // envio datos a una lista
         // El modelo es una lista de peliculas. Es un alista
         public ActionResult PeliculasView()
@@ -129,6 +132,44 @@ namespace TecGurusMiddleMVC.Controllers
             return View("ListPeliculas", peliculas);
         }
 
+        //Tarea en una acción llamada PEliculaGanadora regresar a su vista una sola pelicula
+        //***Con los datos de su preferencia
 
-    }
+        // ViewBag
+        // Es un contenedor de datos u objetos que no necesariamente pertenecen
+        // al modelo. Ejemplo string int bool, etc. que permite regresar valores
+        // a la vista
+
+        //public ActionResult ViewBagExample()
+        //{
+        //    // El nombre del ViewBag y se convierte en lo que yo le setee a la derecha
+        //    // en este caso es un string 
+        //    // https://localhost:44325/Pelicula/ViewBagExample
+        //    //
+        //    ViewBag.Saludo = "Hola Mundo";
+        //    return View("ViewBagExample");
+        //}
+
+        public ActionResult ViewBagExample()
+        {
+            DirectorModels director = new DirectorModels();
+            director.Nombre = "AldoViewBagExample";
+            ViewBag.Pelicula = new PeliculaModels { Id = 100, Titulo = "PeliculaViewBagExample", Duracion = 900, Genero = "Aprendizaje", Director = director };
+            ViewBag.Saludo = "Hola Mundo";
+            return View("ViewBagExample");
+        }
+
+
+        //Ejercicio Crear accion Dias que regrese a una vista los dias de la
+        //semana --- Pueden utilizar ViewBag o algún modelo
+
+        public ActionResult DiasSemana()
+        {
+            ViewBag.dias = new string[] { "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado", "Domingo" };
+            return View();
+        }
+
+
+
+    }   // fin de la clase PeliculaController
 }

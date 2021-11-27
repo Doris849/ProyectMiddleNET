@@ -246,6 +246,8 @@
     <Content Include="Views\Pelicula\Saldo.cshtml" />
     <Content Include="Views\Pelicula\Nominadas.cshtml" />
     <Content Include="Views\Pelicula\ListPeliculas.cshtml" />
+    <Content Include="Views\Pelicula\ViewBagExample.cshtml" />
+    <Content Include="Views\Pelicula\DiasSemana.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

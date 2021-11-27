@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "DiasSemana";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var dias = (string[])ViewBag.dias;
+
+}
+
+<h2>DiasSemana</h2>
+
+<ul>
+    @foreach (string dia in dias)
+     {
+        <li>@dia</li>
+     }
+
+</ul>
+

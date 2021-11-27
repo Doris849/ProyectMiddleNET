@@ -1,0 +1,20 @@
+﻿@*Codigo original*@
+@*ViewBag.Title = "ViewBagExample";*@
+@*<h2>ViewBagExample</h2>*@
+@*Se castea (string) y recibe un ViewBag.Saludo; con var Saludo = (string)ViewBag.Saludo; 
+   debe de llamarse tal cual está en el controlador *@
+
+@{
+    var Saludo   = (string)ViewBag.Saludo;
+    var Pelicula = (TecGurusMiddleMVC.Models.PeliculaModels)ViewBag.Pelicula;
+}
+
+<h2>@Saludo</h2>
+<br />
+<br />
+<h5>@Pelicula.Id</h5>
+<br />
+<h5>@Pelicula.Director</h5>
+<br />
+<h5>@Pelicula.Genero</h5>
+
