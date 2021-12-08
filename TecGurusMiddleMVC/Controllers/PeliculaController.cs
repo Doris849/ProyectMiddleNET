@@ -82,16 +82,23 @@ namespace TecGurusMiddleMVC.Controllers
             List<PeliculaModels> peliculasList = new List<PeliculaModels>();
             DirectorModels director = new DirectorModels();
             director.Nombre = "Aldo Director de pelicula";
-            peliculasList.Add(new PeliculaModels { Id = 1, Titulo = "P1Accion", Duracion = 100, Genero = "accion", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 2, Titulo = "P2Accion", Duracion = 200, Genero = "accion", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 3, Titulo = "P3Terror", Duracion = 151, Genero = "Terror", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 4, Titulo = "P4Terror", Duracion = 85, Genero = "Terror", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 5, Titulo = "P5Suspenso", Duracion = 500, Genero = "Suspenso", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 6, Titulo = "P6Suspenso", Duracion = 105, Genero = "Suspenso", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 7, Titulo = "P7Drama", Duracion = 99, Genero = "Drama", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 8, Titulo = "P8Drama", Duracion = 60, Genero = "Drama", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 9, Titulo = "P9Drama", Duracion = 199, Genero = "Drama", Director = director });
-            peliculasList.Add(new PeliculaModels { Id = 10, Titulo = "P10Ficcion", Duracion = 164, Genero = "Ficcion", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 1, Titulo = "Avengers", Duracion = 160, Genero = "Accion", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 2, Titulo = "Mazenger Z", Duracion = 190, Genero = "Suspenso", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 3, Titulo = "La isla", Duracion = 210, Genero = "Suspenso", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 4, Titulo = "Ouija", Duracion = 210, Genero = "Terror", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 5, Titulo = "Chuky", Duracion = 150, Genero = "Terror", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 6, Titulo = "La monja", Duracion = 260, Genero = "Terror", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 11, Titulo = "P1Accion", Duracion = 100, Genero = "accion", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 12, Titulo = "P2Accion", Duracion = 200, Genero = "accion", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 13, Titulo = "P3Terror", Duracion = 151, Genero = "Terror", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 14, Titulo = "P4Terror", Duracion = 85, Genero = "Terror", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 15, Titulo = "P5Suspenso", Duracion = 500, Genero = "Suspenso", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 16, Titulo = "P6Suspenso", Duracion = 105, Genero = "Suspenso", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 17, Titulo = "P7Drama", Duracion = 99, Genero = "Drama", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 18, Titulo = "P8Drama", Duracion = 60, Genero = "Drama", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 19, Titulo = "P9Drama", Duracion = 199, Genero = "Drama", Director = director });
+            peliculasList.Add(new PeliculaModels { Id = 20, Titulo = "P10Ficcion", Duracion = 164, Genero = "Ficcion", Director = director });
+            
             return peliculasList;
         }
 
@@ -169,6 +176,158 @@ namespace TecGurusMiddleMVC.Controllers
             return View();
         }
 
+
+        public List<PeliculaModels> ExampleLinq1()
+        {
+            var peliculasQuery = (from peliculas in getPeliculas()
+                                  where peliculas.Genero == "Terror"
+                                  select peliculas
+                                  ).ToList();
+
+            return peliculasQuery;
+        }
+
+        /// <summary>
+        /// Ejemplo de ordenamiento
+        /// </summary>
+        /// <returns></returns>
+        public List<PeliculaModels> ExampleLinq2()
+        {
+            var peliculasQuery = (from peliculas in getPeliculas()
+                                  orderby peliculas.Titulo ascending
+                                  select peliculas
+                                  ).ToList();
+
+            return peliculasQuery;
+        }
+
+        /// <summary>
+        /// Ejemplo de ordenamiento doble y filtrado
+        /// </summary>
+        /// <returns></returns>
+        public List<PeliculaModels> ExampleLinq3()
+        {
+            var peliculasQuery = (from peliculas in getPeliculas()
+                                  where peliculas.Genero == "Terror"
+                                  orderby peliculas.Titulo, peliculas.Duracion ascending
+                                  select peliculas
+                                  ).ToList();
+
+            return peliculasQuery;
+        }
+
+
+        //Consulta con linq que filtre las pelicuas donde el genero sea Terror o suspendo
+        // y la duración sea mayor a 200 minutos ordenadas por duracion y titulo
+
+        public List<PeliculaModels> ExampleLinq4()
+        {
+            var peliculasQuery = (from peliculas in getPeliculas()
+                                  where ( peliculas.Genero == "Terror" || peliculas.Genero == "Suspenso")
+                                  && peliculas.Duracion > 200
+                                  orderby peliculas.Duracion, peliculas.Titulo descending
+                                  select peliculas
+                                 ).ToList();
+            return peliculasQuery;
+        }
+
+        // Es mas diercta y lineal Lamba expresion que Liq
+
+        /// <summary>
+        /// ////////////////////////////////////////////////////////////////////////////////////////////
+        /// </summary>
+        /// <returns></returns>
+
+        public ActionResult ViewLinqExamples()
+        {
+            var linq1 = ExampleLinq1();
+            var linq2 = ExampleLinq2();
+            var linq3 = ExampleLinq3();
+
+            var Lambda1 = ExampleLambda1();
+            var Lamda2 = ExampleLambda2();
+            var Lamda33 = ExampleLambda33();
+            var Lamda3 = ExampleLambda3();
+            var Lamda4 = ExampleLambda4();
+            return View(Lamda4);
+        }
+
+        //Lambda Expression es una sentencia mas avanzada en relacion a linq, es mas directa y lineal 
+        //Que se vuelve mas comnpleja en cuanto va creciendo la consulta
+
+        public List<PeliculaModels> ExampleLambda1()
+        {
+            var peliculasQuery = (from peliculas in getPeliculas()
+                                  where peliculas.Genero == "Terror"
+                                  select peliculas
+                                  ).ToList();
+            //De esta coleccion de datos recupera las que son de genero terror
+            var peliculaLambda = getPeliculas().Where(w => w.Genero == "Terror").ToList();
+
+            return peliculaLambda;
+        }
+
+
+        public List<PeliculaModels> ExampleLambda2()
+        {
+            var peliculasQuery = (from peliculas in getPeliculas()
+                                  where peliculas.Genero == "Terror"
+                                  orderby peliculas.Titulo descending, peliculas.Duracion descending
+                                  select peliculas
+                                  ).ToList();
+
+
+            //De esta coleccion de datos recupera las que son de genero terror
+            var peliculaLambda = getPeliculas().Where(w => w.Genero == "Terror").
+                OrderByDescending(o => o.Titulo).ThenByDescending(o => o.Duracion).ToList();
+
+            return peliculaLambda;
+        }
+
+
+        // Peliculas que el genero sea terror o suspendo y duracion < 200
+        // ordenadas por genero ascendente
+
+        public List<PeliculaModels> ExampleLambda33()
+        {
+            // Doris
+            var peliculasQuery = (from peliculas in getPeliculas()
+                                  where ( peliculas.Genero == "Terror" || peliculas.Genero == "Suspenso" )
+                                  && peliculas.Duracion < 200 
+                                  orderby peliculas.Genero ascending
+                                  select peliculas
+                                 ).ToList();
+
+            // De la coleccion de datos recupera ls que son de genero terror 
+            //var peliculaLambda = getPeliculas().Where(w => (w.Genero == "Terror" || w.Genero == "Suspenso") && w.Duracion < 200)
+            // .OrderBy(o => o.Genero)
+            // .ToList();
+
+            return peliculasQuery;
+        }
+
+        //1.-Con lambda obtener las peliculas que sean de duracion mayora 200 minutos y menor
+        //a 250 minutos ordenadas por titulo de manera ascendente y duracion de manera descendente
+
+        public List<PeliculaModels> ExampleLambda3()
+        {
+            var peliculaLambda = getPeliculas().Where(w => w.Duracion > 200 && w.Duracion < 250)
+            .OrderBy(o => o.Titulo)
+            .ThenByDescending(o => o.Duracion)
+            .ToList();
+            return peliculaLambda;
+        }
+
+        //2.-Con lambda obtener las peliculas que el genero sea Terro o Suspenso y la duracion sea
+        //menor a 200 ordenadas por genero ascendente
+
+        public List<PeliculaModels> ExampleLambda4()
+        {
+            var peliculaLambda = getPeliculas().Where(w => (w.Genero == "Terror" || w.Genero == "Suspenso") && w.Duracion < 200)
+            .OrderBy(o => o.Genero)
+            .ToList();
+            return peliculaLambda;
+        }
 
 
     }   // fin de la clase PeliculaController

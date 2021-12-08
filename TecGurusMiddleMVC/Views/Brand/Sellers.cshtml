@@ -1,0 +1,16 @@
+﻿@*Con que modelo trabaja la vista*@
+@model List<TecGurusMiddleMVC.DatabaseFirstExample.Seller>
+@{
+    ViewBag.Title = "Sellers";
+}
+
+<h2>Sellers</h2>
+<hr />
+<br />
+
+@foreach (var seller in Model)
+{
+    <h4>@seller.Nombre</h4>
+    <h4>@seller.ApellidoPat</h4>
+    <hr />
+}

@@ -1,0 +1,18 @@
+﻿@model TecgurusMiddleModel.ProductViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Products</h2>
+<hr />
+<br />
+
+<div class="row">
+    <div id="tableProduct">
+        @Html.Partial("_ProductModelList", Model)
+    </div>
+
+    <div id="tableProductBEverage" class="hide">
+        @Html.Partial("_ProductModelList", Model)
+    </div>
+</div>

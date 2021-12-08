@@ -1,0 +1,15 @@
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\bin\Debug\TecgurusMiddleServices.dll.config
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\bin\Debug\TecgurusMiddleServices.dll
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\bin\Debug\TecgurusMiddleServices.pdb
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\bin\Debug\EntityFramework.dll
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\bin\Debug\TecgurusMiddleEntity.dll
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\bin\Debug\TecgurusMiddleEntity.pdb
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\bin\Debug\TecgurusMiddleEntity.dll.config
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\bin\Debug\EntityFramework.xml
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\obj\Debug\TecgurusMiddleServices.csproj.AssemblyReference.cache
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\obj\Debug\TecgurusMiddleServices.csproj.CoreCompileInputs.cache
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\obj\Debug\TecgurusMiddleServices.csproj.CopyComplete
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\obj\Debug\TecgurusMiddleServices.dll
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleServices\obj\Debug\TecgurusMiddleServices.pdb

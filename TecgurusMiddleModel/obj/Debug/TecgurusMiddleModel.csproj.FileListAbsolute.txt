@@ -1,0 +1,6 @@
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleModel\bin\Debug\TecgurusMiddleModel.dll
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleModel\bin\Debug\TecgurusMiddleModel.pdb
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleModel\obj\Debug\TecgurusMiddleModel.csproj.AssemblyReference.cache
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleModel\obj\Debug\TecgurusMiddleModel.csproj.CoreCompileInputs.cache
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleModel\obj\Debug\TecgurusMiddleModel.dll
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleModel\obj\Debug\TecgurusMiddleModel.pdb

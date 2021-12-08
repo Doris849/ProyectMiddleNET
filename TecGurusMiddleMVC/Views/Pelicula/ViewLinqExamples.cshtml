@@ -1,0 +1,15 @@
+﻿@model List<TecGurusMiddleMVC.Models.PeliculaModels>
+@{
+    ViewBag.Title = "ViewLinqExamples";
+}
+
+<h2>Peliculas</h2>
+<hr />
+@foreach (var item in Model)
+{
+    <h3>@item.Titulo</h3>
+    <h3>@item.Genero</h3>
+    <h3>@item.Duracion</h3>
+    <hr />
+}
+

@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -167,14 +169,34 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="CodeFirstExample\DBContextCodeFirst.cs" />
+    <Compile Include="CodeFirstExample\Students.cs" />
+    <Compile Include="CodeFirstExample\Teachers.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BrandController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PeliculaController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="DatabaseFirstExample\Brand.cs" />
+    <Compile Include="DatabaseFirstExample\Car.cs" />
+    <Compile Include="DatabaseFirstExample\DBContextDBFirst.cs" />
+    <Compile Include="DatabaseFirstExample\Seller.cs" />
+    <Compile Include="DatabaseFirstExample\SellersXBrand.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112010242575_Initial.cs" />
+    <Compile Include="Migrations\202112010242575_Initial.Designer.cs">
+      <DependentUpon>202112010242575_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112010459576_migracion2.cs" />
+    <Compile Include="Migrations\202112010459576_migracion2.Designer.cs">
+      <DependentUpon>202112010459576_migracion2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DirectorModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -248,9 +270,15 @@
     <Content Include="Views\Pelicula\ListPeliculas.cshtml" />
     <Content Include="Views\Pelicula\ViewBagExample.cshtml" />
     <Content Include="Views\Pelicula\DiasSemana.cshtml" />
+    <Content Include="Views\Pelicula\ViewLinqExamples.cshtml" />
+    <Content Include="Views\Brand\Index.cshtml" />
+    <Content Include="Views\Brand\Sellers.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\_ProductModelList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Category\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -264,6 +292,32 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202112010242575_Initial.resx">
+      <DependentUpon>202112010242575_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112010459576_migracion2.resx">
+      <DependentUpon>202112010459576_migracion2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TecgurusMiddleEntity\TecgurusMiddleEntity.csproj">
+      <Project>{914576B0-53B5-4C34-B3AB-EDF52C1C8B0C}</Project>
+      <Name>TecgurusMiddleEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TecgurusMiddleFactories\TecgurusMiddleFactories.csproj">
+      <Project>{43EA0B9D-503E-4740-B3A9-4E89DACC93EE}</Project>
+      <Name>TecgurusMiddleFactories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TecgurusMiddleModel\TecgurusMiddleModel.csproj">
+      <Project>{5BBC62E8-414E-47FD-B2CB-817F0DCBFC70}</Project>
+      <Name>TecgurusMiddleModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TecgurusMiddleServices\TecgurusMiddleServices.csproj">
+      <Project>{8851A259-5D9C-41CF-B692-8610473106C8}</Project>
+      <Name>TecgurusMiddleServices</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
