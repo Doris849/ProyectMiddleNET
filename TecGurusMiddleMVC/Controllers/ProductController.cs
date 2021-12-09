@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TecgurusMiddleFactories;
+using TecgurusMiddleModel;
 using TecgurusMiddleServices;
 
 // El namespace en Entity Data Model (EDM) es es un contenedor abstracto para tipos de entidad,
@@ -44,12 +45,39 @@ namespace TecGurusMiddleMVC.Controllers
         //en la vista parcial
 
         [HttpPost]
-        public ActionResult ajax_ChangePage(int page)
+        public ActionResult ajax_ChangePage(int page, string valueSearch)
         {
-            var products = productModelFactory.PrepareToProductViewModel(page);
+            var products = productModelFactory.PrepareToProductViewModel(page, valueSearch);
             return PartialView("_ProductModelList", products);
-
         }
+
+        // al hacer el submit hace todo el modelo, me interesa el value seaarch, ya no recibe el page
+
+        [HttpPost]
+        public ActionResult Ajax_Search(ProductViewModel model)
+        {
+            //Con el valor que traiga d ela vista hacer un filtrado de datos en factory
+            //Con el valor de lavista hacer un filtrado de datos en Factory
+            // simpre va (1) siempre va a estar en la pagina 1 uando fieltre
+            var products = productModelFactory.PrepareToProductViewModel(1, model.ValueSearch);
+            return PartialView("_ProductModelList", products);
+        }
+
+        // se crea la vista Create (mouse derecho, add view MVC 5 View, no es una vista parcial
+        // se marca la opción USe a Layout page
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return null;
+        }
+
+
+
+
+
+
+
 
 
         //Tarea Crear Servicio para Categoria, crear controller Category y mostrar

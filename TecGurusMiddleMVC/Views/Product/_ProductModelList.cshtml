@@ -89,18 +89,22 @@ else
 
 }
 
+
 <script>
-    //Funcion de javascript que recibe el numero de pagina a cambiar
+    @*//Funcion de javascript que recibe el numero de pagina a cambiar *@
     function ChangedPage(numberPage) {
-        //evento ajax para el llamado asincrono
+        @*//evento ajax para el llamado asincrono *@
         $.ajax({
-            //Acción de controller donde se hara el cambio de pagina
+            @*//Acción de controller donde se hara el cambio de pagina *@
             url: '@Url.Action("ajax_ChangePage")',
             type: 'POST',
-            //los parametros deben llamarse igual en ambos lados(metodo C# y data de javascript)
-            data: { "page": numberPage },
+            @* //los parametros deben llamarse igual en ambos lados(metodo C# y data de javascript) *@
+            data: {
+                "page": numberPage,
+                "valueSearch": $("#txtValueSearch").val()
+            },
             success: function (data) {
-                //el sigo # es para acceder a un id de un elemento Html
+                @*//el signo # es para acceder a un id de un elemento Html*@
                 $("#tableProduct").html(data);
             }
         });

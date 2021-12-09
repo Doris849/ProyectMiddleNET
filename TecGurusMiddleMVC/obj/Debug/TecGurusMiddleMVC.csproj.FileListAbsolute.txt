@@ -1,3 +1,8 @@
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\obj\Debug\TecGurusMiddleMVC.csproj.AssemblyReference.cache
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\obj\Debug\TecGurusMiddleMVC.Migrations.Initial.resources
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\obj\Debug\TecGurusMiddleMVC.Migrations.migracion2.resources
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\obj\Debug\TecGurusMiddleMVC.csproj.GenerateResource.cache
+C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\obj\Debug\TecGurusMiddleMVC.csproj.CoreCompileInputs.cache
 C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\bin\TecGurusMiddleMVC.dll.config
 C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\bin\TecGurusMiddleMVC.dll
 C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\bin\TecGurusMiddleMVC.pdb
@@ -112,11 +117,5 @@ C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\bin\Microsof
 C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\obj\Debug\TecGurusMiddleMVC.csproj.AssemblyReference.cache
-C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\obj\Debug\TecGurusMiddleMVC.Migrations.Initial.resources
-C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\obj\Debug\TecGurusMiddleMVC.Migrations.migracion2.resources
-C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\obj\Debug\TecGurusMiddleMVC.csproj.GenerateResource.cache
-C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\obj\Debug\TecGurusMiddleMVC.csproj.CoreCompileInputs.cache
-C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\obj\Debug\TecGurusMiddleMVC.csproj.CopyComplete
 C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\obj\Debug\TecGurusMiddleMVC.dll
 C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecGurusMiddleMVC\obj\Debug\TecGurusMiddleMVC.pdb

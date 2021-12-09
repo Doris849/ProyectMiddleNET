@@ -3,16 +3,65 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Products</h2>
-<hr />
-<br />
-
 <div class="row">
-    <div id="tableProduct">
-        @Html.Partial("_ProductModelList", Model)
+    <div class="col-md-10">
+        <h2>Products</h2>
     </div>
-
-    <div id="tableProductBEverage" class="hide">
-        @Html.Partial("_ProductModelList", Model)
+    <br />
+    <div class="col-md-2">
+        @Html.ActionLink("Nuevo", "Create", null, new { @class = "btn btn-info" })
     </div>
 </div>
+<hr />
+<br />
+@*  
+    //Es una funcion perteneciente a MVC - Codigo Razor la cual realiza un peticion y envio de datos del
+    //formulario al servidor, la peticion se realiza de manera Ajax es decir asincrona
+*@
+@using (Ajax.BeginForm("Ajax_Search", "Product",
+    new AjaxOptions
+    {
+
+        HttpMethod = "Post",
+        @*
+        //esta propiedad se usa para especificar
+        // el ID del elemento DOM para qué indique
+        //que parte se actualizará; por ejemplo,
+        //si especificamos la identificación de
+        //la etiqueta DIV, solo esa parte DIV particular se actualizará.
+        *@
+            UpdateTargetId = "tableProduct",
+        @*
+        //especifica que la devolucion de datos de AjaxSearch
+        //van a remplazar a la coleccion pasada
+        *@
+            InsertionMode = InsertionMode.Replace
+        }
+
+        ))
+    {
+
+
+        <div class="row">
+            <div class="col-md-3">
+                @Html.TextBoxFor(m => m.ValueSearch, new { @id = "txtValueSearch", @class = "form-control", @placeholder = "Product Name" })
+            </div>
+            <div class="col-md-3">
+                <button type="submit" id="btnSubmit" class="btn btn-info glyphicon glyphicon-search"></button>
+            </div>
+            <div class="col-md-offset-3 col-md-3 ">
+
+            </div>
+
+        </div>
+
+
+        <br />
+
+        <div class="row">
+            <div id="tableProduct">
+                @Html.Partial("_ProductModelList", Model)
+            </div>
+
+        </div>
+    }

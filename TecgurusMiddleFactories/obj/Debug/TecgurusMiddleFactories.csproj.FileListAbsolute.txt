@@ -15,6 +15,5 @@ C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleFactories\bin\De
 C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleFactories\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleFactories\obj\Debug\TecgurusMiddleFactories.csproj.AssemblyReference.cache
 C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleFactories\obj\Debug\TecgurusMiddleFactories.csproj.CoreCompileInputs.cache
-C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleFactories\obj\Debug\TecgurusMiddleFactories.csproj.CopyComplete
 C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleFactories\obj\Debug\TecgurusMiddleFactories.dll
 C:\Users\dmartinez\source\repos\TecGurusMiddleUAM\TecgurusMiddleFactories\obj\Debug\TecgurusMiddleFactories.pdb

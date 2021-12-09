@@ -29,11 +29,22 @@ namespace TecgurusMiddleFactories
         }
 
         //Accion para manipular las acciones de paginado y busqueda
-    
-        public ProductViewModel PrepareToProductViewModel(int page)
+
+        //public ProductViewModel PrepareToProductViewModel(int page)
+        public ProductViewModel PrepareToProductViewModel(int page, string valueSearch)
         {
             ProductViewModel productViewModel = new ProductViewModel();
             var ListProductModel = GetProductsWithCategory();
+            if (!string.IsNullOrEmpty(valueSearch))
+            {
+                ListProductModel = ListProductModel.Where(w =>
+                                    w.ProductName.ToUpper().Contains(valueSearch.ToUpper()) 
+                                    ||
+                                    w.CategoryName.ToUpper().Contains(valueSearch.ToUpper())
+                                    );
+            }
+
+
             productViewModel.CurrentPage = page;
             productViewModel.NumberOfPage = Convert.ToInt32(Math.Ceiling((double)ListProductModel.Count() / PageSize));
             //el take es una instruccion que permite tomar cierta cantidad de datos de una colección
@@ -41,8 +52,6 @@ namespace TecgurusMiddleFactories
             productViewModel.TotalData = ListProductModel.Count();
             return productViewModel;
         }
-
-
 
         /// <summary>
         /// Estructura de una consulta que puede ser manipulada posteriormente,
